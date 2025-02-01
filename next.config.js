@@ -8,6 +8,16 @@ const nextConfig = {
     };
     return config;
   },
+  async rewrites() {
+    return {
+      beforeFiles: [
+        {
+          source: '/api/:path*',
+          destination: '/api/:path*',
+        },
+      ],
+    };
+  },
 }
 
 module.exports = nextConfig
